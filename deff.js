@@ -1266,12 +1266,12 @@ if (isGroup) {
 
       }
     }
-    if (isSimi) {
-      simi = await fetchJson(`https://api.simsimi.net/v2/?text=${cmd}&lc=id`)
+ /*if (isSimi) {
+      simi = await fetchJson(`https://api.simsimi.net/v2/?text=${cmd}&lc=ID`)
       sami = simi.success
       deff.sendMessage(from, `${sami}`, text, { thumbnail: ofrply, sendefffhemeral: true, quoted: defff, contextInfo: { forwardingScore: 508, isForwarded: true } })
     }
-    deff.updatePresence(from, Presence.composing)
+    deff.updatePresence(from, Presence.composing)*/
 
     deff.chatRead(from, "read")
   
