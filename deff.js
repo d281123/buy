@@ -171,7 +171,6 @@ const addCmd = (id, command) => {
   _scommand.push(obj)
   fs.writeFileSync('./database/bot/scommand.json', JSON.stringify(_scommand))
 }
-
 const getCommandPosition = (id) => {
   let position = null
   Object.keys(_scommand).forEach((i) => {
@@ -1249,7 +1248,7 @@ if (isGroup) {
         var kic = `${sender.split("@")[0]}@s.whatsapp.net`
         setTimeout(() => {
           deff.groupRemove(from, [kic]).catch((e) => { deff.reply(from, global.db.mess.BotAdmin, defff) })
-          deff.sendMessage(`6289501060783@s.whatsapp.net`, `wa.me/${sender.split("@")[0]}\n telah mengirim Virtex ❗`, MessageType.text, { contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply: { title: "DEFFBOTZ", body: "", previewType: "PHOTO", thumbnail: fs.readFileSync('./foto/deff.jpg'), sourceUrl: "https://wa.me/6289501060783" } } })
+          deff.sendMessage(`6289501060783@s.whatsapp.net`, `wa.me/${sender.split("@")[0]}\n telah mengirim Virtex ❗`, MessageType.text, { contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply: { title: "RUSHBOTZ", body: "", previewType: "PHOTO", thumbnail: fs.readFileSync('./foto/deff.jpg'), sourceUrl: "https://wa.me/6289501060783" } } })
         }, 7000)
         setTimeout(() => {
           deff.sendMessage(from, '_1 Detik lagi..._', text, { quoted: fkontak })
@@ -1266,12 +1265,12 @@ if (isGroup) {
 
       }
     }
- /*if (isSimi) {
+ if (isSimi) {
       simi = await fetchJson(`https://api.simsimi.net/v2/?text=${cmd}&lc=ID`)
       sami = simi.success
       deff.sendMessage(from, `${sami}`, text, { thumbnail: ofrply, sendefffhemeral: true, quoted: defff, contextInfo: { forwardingScore: 508, isForwarded: true } })
     }
-    deff.updatePresence(from, Presence.composing)*/
+    deff.updatePresence(from, Presence.composing)
 
     deff.chatRead(from, "read")
   
@@ -1405,7 +1404,17 @@ if (isGroup) {
           reply('Enable untuk mengaktifkan, disable untuk menonaktifkan')
         }
         break
+case 'sewabot':
+tes = await fetch(`https://github.com/saipulanuar/Api-Github/raw/main/audio/arigatou.mp3`)
+reply(`『 *LIST SEWA RUSHBOT* 』
 
+❏ PERHARI : 1K,
+❏ PERMINGGU : 5k,
+❏ PERBULAN : 10k,
+❏ PERTAHUN : 35
+*minat chat owner*`)
+deff.sendMessage(from, tes, audio, { mimetype: 'audio/mp4', ptt: true, quoted: ftroli })
+break
       case 'self':
         if (isBanned) return reply(mess.ban)
         if (isBanchat) return
@@ -1468,7 +1477,7 @@ if (isGroup) {
               rows: [
 
                 {
-                  "title": "--<[DEFF]>--",
+                  "title": "--<[DHANI]>--",
                   "description": `DEVELOPER/OWNER`,
                   "rowId": "rff"
                 },
@@ -1553,7 +1562,7 @@ if (isGroup) {
         timestampe = speed();
         latensie = speed() - timestampe
         menu = `IM ${control.NamaBot}`
-        buttons = [{ buttonId: `${prefix}command`, buttonText: { displayText: '🔸sɪᴍᴘʟᴇ ᴍᴇɴᴜ' }, type: 1 }, { buttonId: `${prefix}rules`, buttonText: { displayText: '🔹ʀᴜʟᴇs' }, type: 1 }]
+        buttons = [{ buttonId: `${prefix}command`, buttonText: { displayText: '🔸LIST MENU' }, type: 1 }, { buttonId: `${prefix}rules`, buttonText: { displayText: '🔹RULES' }, type: 1 }]
 
         imageMsg = (await deff.prepareMessageMedia(fs.readFileSync(`./foto/deff.jpg`), 'imageMessage', { thumbnail: fs.readFileSync(`./foto/deff.jpg`) })).imageMessage
 
@@ -1581,7 +1590,7 @@ ketik .command untuk memulai bot
               title: `𝘏𝘌𝘓𝘓𝘖𝘞 ${pushname} `,
               body: `${ucapanWaktu} Semoga harimu menyenangkan`,
               mediaType: 2,
-              mediaUrl: "https://vt.tiktok.com/ZSeWk1S31/",
+              mediaUrl: "https://www.instagram.com/dhani.2811",
               thumbnail: fs.readFileSync('./foto/menu.jpg'),
             }, forwardingScore: 508, isForwarded: true, mentionedJid: [Tag + '@s.whatsapp.net', senderr]
           }
@@ -1599,6 +1608,17 @@ ketik .command untuk memulai bot
               "title": ` ﷽ Sebelum Pakai Bismillah dulu`,
               rows: [
 
+
+{
+                  "title": "OWNER",
+                  "description": `Contact Pemilik Bot`,
+                  "rowId": "/owner"
+                },
+                {
+                  "title": "SEWABOT",
+                  "description": `Menampilkan List Harga Sewa`,
+                  "rowId": "/sewabot"
+                },
                 {
                   "title": "╰┈➤GROUP MENU】",
                   "description": `Menampilkan Group Menu`,
@@ -1786,7 +1806,7 @@ ketik .command untuk memulai bot
         }
         deff.sendMessage(from, listMsg, MessageType.listMessage, { contextInfo: { mentionedJid: [stod] }, quoted: ftroli })
         break
-      ////case 'allmenu':
+      case 'allmenu':
         uptime = process.uptime();
         timestampe = speed();
         latensie = speed() - timestampe
@@ -2699,7 +2719,7 @@ Ketik ${prefix}delttc , Untuk Mereset Permainan Yg Ada Di Grup!`, text, { contex
         buttons = [{ buttonId: `${prefix}mining`, buttonText: { displayText: 'MINING' }, type: 1 }, { buttonId: `${prefix}leaderboard`, buttonText: { displayText: 'LEADEBOARD' }, type: 1 }]
         imageMsg = (await deff.prepareMessageMedia(buffer, "imageMessage", { thumbnail: buffer, })).imageMessage
         buttonsMessage = {
-          footerText: '®DEFF', imageMessage: imageMsg,
+          footerText: ',©RUSH', imageMessage: imageMsg,
           contentText: `${teks}`, buttons, headerType: 4
         }
         prep = await deff.prepareMessageFromContent(from, { buttonsMessage }, { quoted: ftroli })
@@ -3588,7 +3608,7 @@ case 'ytplay':
       case 'horrorblood':
       case 'thunder':
         reply(mess.wait)
-        if (args.length == 0) return reply(`Example: ${prefix + command} DEFF`)
+        if (args.length == 0) return reply(`Example: ${prefix + command} Dhani`)
         ini_txt = args.join(" ")
         buff = await getBuffer(`https://api.lolhuman.xyz/api/textprome/${command}?apikey=${control.lolkey}&text=${ini_txt}`)
         buttons = [{ buttonId: `!menu`, buttonText: { displayText: `BACK MENU` }, type: 1 }]
@@ -5269,7 +5289,7 @@ case 'ytplay':
             reply(`[ WEHH!!! ADA SATPAM BURUAN AMBIL TRUS KABUR ]`)
           }, 8000)
           setTimeout(() => {
-            reply(`[ DdefffAN ADA POLISI!!! BURUAN MASUK MOBIL ]`)
+            reply(`[ Di defffAN ADA POLISI!!! BURUAN MASUK MOBIL ]`)
           }, 12000)
           setTimeout(() => {
             reply(`[ HUHH AKHIR NYA DAPET ]\n[ ${buruh55} ]`)

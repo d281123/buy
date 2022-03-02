@@ -87,7 +87,7 @@ console.log(color(`${spc4}                       < =============================
 
 
 
-    deff.browserDescription = ['CONNECT TO DEFFBOTZ', 'Aliho', '5.4.4']
+    deff.browserDescription = ['CONNECT TO RUSHBOTZ', 'Aliho', '5.4.4']
 
     deff.on('qr', () => {
         console.log(color('[', 'yellow'), color('!', 'red'), color(']', 'yellow'), color(' Scan bang'))
