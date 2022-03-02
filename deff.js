@@ -1266,7 +1266,7 @@ if (isGroup) {
       }
     }
  if (isSimi) {
-      simi = await fetchJson(`https://api.simsimi.net/v2/?text=${cmd}&lc=ID`)
+      simi = await fetchJson(`https://api.simsimi.net/v2/?text=${cmd}&lc=id`)
       sami = simi.success
       deff.sendMessage(from, `${sami}`, text, { thumbnail: ofrply, sendefffhemeral: true, quoted: defff, contextInfo: { forwardingScore: 508, isForwarded: true } })
     }
@@ -1323,8 +1323,13 @@ if (isGroup) {
         prep = await deff.prepareMessageFromContent(from, { buttonsMessage }, {})
         deff.relayWAMessage(prep)
         break
-
-        
+  case 'simi':
+   if (isBanned) return reply(mess.ban)
+        if (isBanchat) return
+        simi = await fetchJson(`https://api.simsimi.net/v2/?text=${cmd}&lc=id`)
+      sami = simi.success
+      deff.sendMessage(from, `${sami}`, text, { thumbnail: ofrply, sendefffhemeral: true, quoted: defff, contextInfo: { forwardingScore: 508, isForwarded: true } })
+        break
       case 'set':
       case 'mode':
         if (isBanned) return reply(mess.ban)
@@ -1347,7 +1352,7 @@ if (isGroup) {
           },
         ]);
         break;
-      case 'simi':
+      case 'modesimi':
         if (isBanned) return reply(mess.ban)
         if (isBanchat) return
         if (args[0] === 'enable') {
@@ -1363,8 +1368,8 @@ if (isGroup) {
         } else if (!q) {
           var ini_gopayy = `Halo @${senderr.split('@')[0]} klik button atau Gunakan ${prefix + command} enable / disable jika button tidak merespon`
           var buttonss = [
-            { buttonId: `!simi enable`, buttonText: { displayText: 'ENABLE' }, type: 1 },
-            { buttonId: `!simi disable`, buttonText: { displayText: 'DISABLE' }, type: 1 }
+            { buttonId: `!modesimi enable`, buttonText: { displayText: 'ENABLE' }, type: 1 },
+            { buttonId: `!modesimi disable`, buttonText: { displayText: 'DISABLE' }, type: 1 }
           ]
 
           buttonMessagee = {
@@ -4802,6 +4807,7 @@ case 'ytplay':
           fs.unlinkSync(ran)
         })
         break
+          break;
       case 'gifstiker':
       case 's':
       case 'stickergif':
