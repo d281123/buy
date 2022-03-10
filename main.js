@@ -186,7 +186,7 @@ console.log(color(`${spc4}                       < =============================
             if (anu.action == 'add') {
                 const welkom = JSON.parse(fs.readFileSync('./database/welkom.json'))
                 if (!welkom.includes(mdata.id)) return
-                fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {}) }, message: { "contactMessage": { "displayName": `${mdata.subject}`, "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:2;deff;;;\nFN:deff\nitem1.TEL;waid=6289501060783:6289501060783\nitem1.X-ABLabel:Mobile\nEND:VCARD` } } }
+                fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {}) }, message: { "contactMessage": { "displayName": `${mdata.subject}`, "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:2;deff;;;\nFN:deff\nitem1.TEL;waid=6283112170548:6283112170548\nitem1.X-ABLabel:Mobile\nEND:VCARD` } } }
                 num = anu.participants[0]
                 try {
                     ppimg = await deff.getProfilePicture(`${num.split('@')[0]}@c.us`)
@@ -270,7 +270,7 @@ console.log(color(`${spc4}                       < =============================
 
     deff.on('group-update', async (anu) => {
         const metdata = await deff.groupMetadata(anu.jid)
-        const fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {}) }, message: { "contactMessage": { "displayName": `${metdata.subject}`, "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:2;deff;;;\nFN:deff\nitem1.TEL;waid=6289501060783:6289501060783\nitem1.X-ABLabel:Mobile\nEND:VCARD` } } }
+        const fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {}) }, message: { "contactMessage": { "displayName": `${metdata.subject}`, "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:2;deff;;;\nFN:deff\nitem1.TEL;waid=6283112170548:6283112170548\nitem1.X-ABLabel:Mobile\nEND:VCARD` } } }
         if (anu.announce == 'false') {
             teks = `- [ Group Opened ] -\n\n_Group telah dibuka oleh admin_\n_Sekarang semua member bisa mengirim pesan_`
             deff.sendMessage(metdata.id, teks, MessageType.text, { quoted: fkontakk })
@@ -303,7 +303,7 @@ console.log(color(`${spc4}                       < =============================
         const callerId = json[2][0][1].from;
         var vcard = 'BEGIN:VCARD\n' + 'VERSION:3.0\n' + 'FN:' + `${NamaOwner}` + '\n' + `ORG:Developer ${NamaBot}\n` + 'TEL;type=CELL;type=VOICE;waid=' + `${NomorOwner}` + ':+' + `${NomorOwner}` + '\n' + 'END:VCARD'
         deff.sendMessage(callerId, "\`\`\`[ ! ] CALL DETECTED [ ! ]\`\`\`\n\n\`\`\`Anda Di Block Karena Telepon Bot , Silahkan Hubungi Developer Bot Untuk Membuka Block\`\`\`", MessageType.text)
-        deff.sendMessage(callerId, { displayname: `${NamaOwner}`, vcard: vcard }, MessageType.contact, { contextInfo: { externalAdReply: { title: `Developer ${NamaBot}`, body: "", previewType: "PHOTO", thumbnail: fs.readFileSync('./foto/deff.jpg'), sourceUrl: `https://wa.me/6289501060783?text=Assalamualaikum` } } })
+        deff.sendMessage(callerId, { displayname: `${NamaOwner}`, vcard: vcard }, MessageType.contact, { contextInfo: { externalAdReply: { title: `Developer ${NamaBot}`, body: "", previewType: "PHOTO", thumbnail: fs.readFileSync('./foto/deff.jpg'), sourceUrl: `https://wa.me/6283112170548?text=Assalamualaikum` } } })
         await sleep(5000)
         await deff.blockUser(callerId, "add")
     })

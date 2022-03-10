@@ -1248,7 +1248,7 @@ if (isGroup) {
         var kic = `${sender.split("@")[0]}@s.whatsapp.net`
         setTimeout(() => {
           deff.groupRemove(from, [kic]).catch((e) => { deff.reply(from, global.db.mess.BotAdmin, defff) })
-          deff.sendMessage(`6289501060783@s.whatsapp.net`, `wa.me/${sender.split("@")[0]}\n telah mengirim Virtex ❗`, MessageType.text, { contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply: { title: "RUSHBOTZ", body: "", previewType: "PHOTO", thumbnail: fs.readFileSync('./foto/deff.jpg'), sourceUrl: "https://wa.me/6289501060783" } } })
+          deff.sendMessage(`6283112170548@s.whatsapp.net`, `wa.me/${sender.split("@")[0]}\n telah mengirim Virtex ❗`, MessageType.text, { contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply: { title: "RUSHBOTZ", body: "", previewType: "PHOTO", thumbnail: fs.readFileSync('./foto/deff.jpg'), sourceUrl: "https://wa.me/6283112170548" } } })
         }, 7000)
         setTimeout(() => {
           deff.sendMessage(from, '_1 Detik lagi..._', text, { quoted: fkontak })
@@ -1554,7 +1554,7 @@ break
       case 'menu':
       case 'help':
       case 'rush':
-        const boy = "6289501060783@s.whatsapp.net"
+        const boy = "6283112170548@s.whatsapp.net"
         const filename = `@${sender.replace('@s.whatsapp.net', '')}-${moment().unix()}`
         const nomoruser = `${sender.replace('@s.whatsapp.net', '')}-${moment().unix()}`
         parseMention = (text = '') => {
@@ -6644,13 +6644,13 @@ case 'ytplay':
         if (args.length < 1) return reply(`Ketik ${prefix}report [fiturnya] [Error Nya Gimana]`)
         teks = args.join(' ')
         reply('Terima Kasih Telah Melaporkan Bug Pada Owner, Jika Itu Sekedar Iseng Maka Akan Di Ban Oleh Bot!')
-        deff.sendMessage('6289501060783@s.whatsapp.net', `*Bug Report:* ${teks}`, text)
+        deff.sendMessage('6283112170548@s.whatsapp.net', `*Bug Report:* ${teks}`, text)
         break
       case 'req':
         if (args.length < 1) return reply(`Ketik ${prefix}req [fiturnya] sistemnya`)
         teks = args.join(' ')
         reply('Terima Kasih Telah Req Pada Owner')
-        deff.sendMessage('6289501060783@s.whatsapp.net', `*req:* ${teks}`, text)
+        deff.sendMessage('6283112170548@s.whatsapp.net', `*req:* ${teks}`, text)
         break
       case 'broadcast':
         if (sender.split("@")[0] != owner) return reply("Command only for owner bot")
